@@ -1,0 +1,6 @@
+{% if t.text %}
+<p>{{ t.text }}</p>
+{% endif %}
+{% if t.fileName %}
+<p>{% capture my_include %}{% if file_exists {{t.fileName}} %}{% endif %}{% endcapture %}{{ my_include | markdownify }}</p>
+{% endif %}

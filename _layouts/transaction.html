@@ -1,0 +1,116 @@
+---
+layout: default
+---
+<div style="width:800px; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.428571429;">
+{% assign transaction = page.transaction %}
+
+<h1> {{ transaction.name }} </h1>
+<hr/>
+
+<h3> Scope </h3>
+{% assign t = transaction.scope %}
+{% include paste_text.liquid foo=t %}
+
+<br> </br>
+
+<h3> Overview </h3>
+{% assign t = transaction.overview %}
+{% include paste_text.liquid foo=t %}
+
+<br> </br>
+<h3> Actors and Roles </h3>
+
+This transaction is used by the actors:
+    <style>
+    table, th, td { border: 1px solid black;}
+    .zebra-striping tbody tr:nth-child(odd) {background: #eee;}
+    </style>
+    <div class="ox-hugo-table zebra-striping sane-table">
+    
+    <table border="1" width="85%" ID="standards" style="margin: 0px;">
+    <thead>
+    <tr>
+    <th width="25%">Actor</th>
+    <th width="75%">Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for participant in transaction.participants %}
+    <tr>
+    <td><a href="{{ participant.actor }}">{{ participant.actor }}</a></td>
+    <td>{{ participant.role }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <br>  
+</div>
+
+<br> </br>
+
+{% if transaction.standards %}
+<h3> Referenced Standards </h3>
+This transaction uses the following standards:
+<ul>
+  {% for standard in transaction.standards %}
+  <li><a href="{{ standard.url }}"> {{standard.name}} ({{standard.version}}) </a> </li>
+    {% endfor %}
+  </ul>
+  <br/>
+{% endif %}
+
+{% if transaction.interactions %}
+<h3> Interactions </h3>
+  This transaction contains the following interactions:
+  <br/>
+  
+  {% for interaction in transaction.interactions %}
+  <h4> {{interaction.title}} </h4>
+  {% include_relative {{interaction.diagram.fileName}}.svg %}
+
+  <br clear="ALL"/>
+
+  {% assign t = interaction.description %}
+  {% include paste_text.liquid foo=t %}
+
+  <br> </br>
+
+  <h4> Trigger Events </h4>
+  {% assign t = interaction.triggerEvents %}
+  {% include paste_text.liquid foo=t %}
+  <br> </br>
+
+  <h4> Message Semantics </h4>
+  {% assign t = interaction.messageSemantics.description %}
+  {% include paste_text.liquid foo=t %}
+
+
+  {% for subsection in interaction.subsections %}
+  <h5> {{subsection.title}} </h5> 
+  {% assign t = subsection.content %}
+  {% include paste_text.liquid foo=t %}
+
+  {% endfor %}
+
+  <br> </br>
+ 
+  <h4> Expected Actions </h4> 
+  {% assign t = interaction.expectedActions %}
+  {% include paste_text.liquid foo=t %}
+  <br/>
+  <br/>  
+
+{% endfor %}
+
+
+
+{% endif %}
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+</div>
