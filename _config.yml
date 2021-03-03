@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: GeneratedContent
 description: A documentation placeholder
-#baseurl: "/transactions" # the subpath of your site, e.g. /blog
+baseurl: "/transactions" # the subpath of your site, e.g. /blog
 url: "https://costateixeira.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 #permalink: pretty
