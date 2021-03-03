@@ -13,22 +13,25 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Docs
-description: A Jekyll theme for documentation
+title: GeneratedContent
+description: A documentation placeholder
 #baseurl: "/just-the-docs" # the subpath of your site, e.g. /blog
-baseurl: "/transactions" # the subpath of your site, e.g. /blog
-url: "https://costateixeira.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "/transactions" # the subpath of your site, e.g. /blog
+url: "https://costateixeira.github.io/transactions" # the base hostname & protocol for your site, e.g. http://example.com
 
 #permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
 , "docs/tests/"
 ]
 
+root: /transactions
+#destination: public/transactions
+
 
 collections:
   transactions:
     output: true
-    permalink: /:path/
+    permalink: /transactions/:path/
 
 defaults:
   - scope:
