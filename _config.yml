@@ -28,7 +28,7 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 collections:
   transactions:
     output: true
-    permalink: /transactions/transactions/:path/
+#    permalink: /transactions/:path/
 
 defaults:
   - scope:
