@@ -31,7 +31,7 @@ root: /transactions
 collections:
   transactions:
     output: true
-    permalink: /transactions/:path/
+    permalink: /transactions/transactions/:path/
 
 defaults:
   - scope:
