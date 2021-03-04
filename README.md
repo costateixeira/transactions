@@ -8,4 +8,4 @@ To add a transaction, add a transactionXXX.md file in the [_transactions folder]
 Transactions are structured in YAML frontmatter; the text attributes can be added in the MD directly, or refer to external md files. See the examples to see how this works.
 The transaction also contains the diagrams (in svg format for now).
 
-![IG Templates](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/costateixeira/gendocs/main/docs/transaction_model.plantuml)
+![IG Templates](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/costateixeira/gendocs/gh-pages/docs/transaction_model.plantuml)
