@@ -18,7 +18,7 @@ description: A documentation placeholder
 baseurl: "/transactions" # the subpath of your site, e.g. /blog
 url: "https://costateixeira.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-permalink: pretty
+permalink: /transactions/:path
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
 , "docs/tests/"
 ]
@@ -30,7 +30,7 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 collections:
   transactions:
     output: true
-    permalink: /transactions/transactions/:path/
+    permalink: /transactions/:path/
 
 defaults:
   - scope:
