@@ -15,22 +15,22 @@
 # in the templates via {{ site.myvariable }}.
 title: GeneratedContent
 description: A documentation placeholder
-baseurl: "/transactions" # the subpath of your site, e.g. /blog
+#baseurl: "/transactions" # the subpath of your site, e.g. /blog
 url: "https://costateixeira.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-#permalink: pretty
+permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
 , "docs/tests/"
 ]
 
-root: /transactions
-#destination: public/transactions
+#root: /transactions
+#destination: transactions
 
 
 collections:
   transactions:
     output: true
-    permalink: /docs/:path/
+    permalink: /relative_url/transactions/:path/
 
 defaults:
   - scope:
