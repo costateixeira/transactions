@@ -1,0 +1,52 @@
+@startuml
+skinparam linetype polyline
+hide circle
+hide stereotype
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+  Class "**Transaction**" as Transaction<<TM>> {
+    |_ **id** (1..1): string
+    |_ name (1..1): string
+    |_ version (1..1): string
+    |_ lastUpdated (0..1): date
+    |_ scope (1..1)
+      |_ text (0..1): string
+      |_ fileName (0..1): string
+    |_ overview (1..1)
+      |_ text (0..1): string
+      |_ fileName (0..1): string
+    |_ participants (1..*)
+      |_ actor (1..1): string
+      |_ role (1..1): string
+    |_ standards (0..*)
+      |_ name (1..1): string
+      |_ version (0..1): string
+      |_ URL (0..1): string
+    |_ interactions (1..*)
+      |_ id (1..1)
+      |_ title (1..1)
+      |_ diagram (0..1)
+        |_ fileName (0..1): string
+        |_ description (0..1): string
+      |_ description (0..1)
+        |_ text (0..1): string
+        |_ fileName (0..1): string
+      |_ triggerEvents (0..1)
+        |_ text (0..1): string
+        |_ fileName (0..1): string
+      |_ messageSemantics (0..1)
+        |_ description (0..1)
+          |_ text (0..1): string
+          |_ fileName (0..1): string
+      |_ expectedActions (0..1)
+        |_ description (0..1)
+          |_ text (0..1): string
+          |_ fileName (0..1): string
+--
+    }
+@enduml
